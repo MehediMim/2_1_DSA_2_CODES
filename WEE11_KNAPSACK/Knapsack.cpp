@@ -119,21 +119,9 @@ vector<node> reduced_value(vector<node> data, int n, double theta)
 
 int main()
 {
-    // int n, W;
-    // cin >> n >> W;
-    // vector<node> data(n);
-    // for (int i = 0; i < n; i++)
-    // {
-    //     cin >> data[i].value >> data[i].weight;
-    // }
-    // vector<vector<int>> dp_table=knapsack(data, n, W);
-    // // print(dp_table);
-    // int ans=result(dp_table,data,n,W);
-    // cout<<dp_table[n][ans]<<endl;
-    // vector<int>v=get_indices(ans,dp_table,data,n,W);
-    // for(int i=0;i<v.size();i++){
-    //     cout<<v[i]<<" ";
-    // }
+
+    freopen("in2.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
     int n, W;
     cin >> n >> W;
     vector<node> data(n);
@@ -177,7 +165,7 @@ int main()
             rounded_value += data[rindices[i] - 1].value;
             used_weight += data[rindices[i] - 1].weight;
         }
-        cout << "Rounded Instance with Eps: " << e << endl;
+        cout << setprecision(5) << "Rounded Instance with Eps: " << e << endl;
         cout << setprecision(20) << "Theta: " << theta << endl;
         cout << "Answer of reduced instance: " << rans << endl;
         cout <<setprecision(20) << "Answer of reduced instance multiplied by theta: " << 1.0 * rans * theta << endl;
@@ -189,7 +177,7 @@ int main()
         cout << endl;
         cout << "Answer of original instance (rounded up): " << rounded_value << endl;
         cout << "Used Weight of rounded instance: " << used_weight << endl;
-        cout << "Ratio: " << (1.0 * rans * theta )/ ans << endl;
+        cout << "Ratio: " << 1.0*ans/rounded_value << endl;
         cout<<endl;
         cout<<endl;
         cout<<endl;
